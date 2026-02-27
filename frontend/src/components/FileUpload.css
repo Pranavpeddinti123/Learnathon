@@ -1,0 +1,97 @@
+.file-upload {
+    width: 100%;
+}
+
+.upload-area {
+    border: 2px dashed var(--card-border);
+    border-radius: 16px;
+    padding: 3rem 2rem;
+    text-align: center;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    background: rgba(255, 255, 255, 0.02);
+    cursor: pointer;
+}
+
+.upload-area:hover {
+    border-color: var(--primary);
+    background: rgba(79, 70, 229, 0.05);
+}
+
+.upload-area.drag-active {
+    border-color: var(--primary);
+    background: rgba(79, 70, 229, 0.1);
+    transform: scale(1.01);
+}
+
+.upload-text {
+    font-size: 1.125rem;
+    font-weight: 500;
+    color: var(--text-main);
+    margin-bottom: 0.5rem;
+}
+
+.upload-hint {
+    color: var(--text-muted);
+    font-size: 0.875rem;
+}
+
+.file-info {
+    animation: fadeIn 0.3s ease-out;
+}
+
+.file-name {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--secondary);
+    margin-bottom: 0.25rem;
+}
+
+.file-format-info {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 12px;
+    border-left: 3px solid var(--primary);
+}
+
+.file-format-info h3 {
+    font-family: var(--font-heading);
+    font-size: 1rem;
+    color: var(--text-main);
+    margin-bottom: 0.75rem;
+}
+
+.file-format-info p {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    margin-bottom: 1rem;
+}
+
+.file-format-info ul {
+    list-style: none;
+    font-size: 0.875rem;
+    color: var(--text-muted);
+}
+
+.file-format-info li {
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.file-format-info li::before {
+    content: "•";
+    color: var(--primary);
+    font-weight: bold;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
