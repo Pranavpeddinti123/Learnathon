@@ -227,8 +227,8 @@ async def predict_image(file: UploadFile = File(...)):
     Uses CLIP zero-shot classification
     """
     # Initialize classifier
-    try:
-        from ml.image_model import get_image_classifier
+        try:
+            from ml.image_model import get_image_classifier
             classifier = get_image_classifier()
     except Exception as e:
         raise HTTPException(
