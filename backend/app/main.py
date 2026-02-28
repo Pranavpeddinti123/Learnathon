@@ -226,7 +226,7 @@ async def predict_image(file: UploadFile = File(...)):
     Predict human activity from an image file
     Uses CLIP zero-shot classification
     """
-    # Initialize classifier
+    #     Initialize classifier
         try:
             from ml.image_model import get_image_classifier
             classifier = get_image_classifier()
