@@ -100,16 +100,6 @@ def load_model():
     print(f"Model validation accuracy: {checkpoint['val_acc']:.2f}%")
 
 
-# Startup event
-@app.on_event("startup")
-async def startup_event():
-    """Load model on startup"""
-    try:
-        load_model()
-    except Exception as e:
-        print(f"Warning: Could not load model on startup: {e}")
-        print("Model will be loaded on first prediction request")
-
 
 # API endpoints
 @app.get("/")
