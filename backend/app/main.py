@@ -219,7 +219,6 @@ async def predict_batch(sensor_data_list: List[SensorData]):
 
 # Image prediction endpoint
 from fastapi import UploadFile, File
-from ml.image_model import get_image_classifier
 
 @app.post("/predict_image", response_model=PredictionResponse)
 async def predict_image(file: UploadFile = File(...)):
@@ -229,6 +228,7 @@ async def predict_image(file: UploadFile = File(...)):
     """
     # Initialize classifier
     try:
+                from ml.image_model import get_image_classifier
         classifier = get_image_classifier()
     except Exception as e:
         raise HTTPException(
